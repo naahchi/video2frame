@@ -1,0 +1,25 @@
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#111;color:#eee}
+.app{width:min(1000px,94%);margin:30px auto 60px}
+h1{margin-bottom:4px}.subtitle{color:#aaa;margin-top:0}
+.card{background:#1b1b1b;border:1px solid #333;border-radius:16px;padding:20px;margin-top:18px}
+.upload{display:flex;align-items:center;justify-content:center;border:2px dashed #555;border-radius:12px;padding:28px;cursor:pointer;text-align:center}
+.upload:hover{border-color:#888}.upload input{display:none}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+label{display:flex;flex-direction:column;gap:7px;color:#bbb;font-size:14px}
+select,input[type=range]{width:100%;padding:10px;background:#111;color:#eee;border:1px solid #444;border-radius:8px}
+.preview-wrap{margin-top:18px;background:#080808;border-radius:12px;overflow:hidden;display:flex;justify-content:center}
+video{max-width:100%;max-height:480px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+button{border:0;border-radius:9px;padding:11px 16px;background:#eee;color:#111;font-weight:700;cursor:pointer}
+button:disabled{opacity:.35;cursor:not-allowed}.secondary{background:#333;color:#eee}
+.status{margin-top:18px}.progress{height:9px;background:#333;border-radius:99px;overflow:hidden}
+#progressBar{height:100%;width:0%;background:#eee;transition:width .1s}
+#statusText{margin-top:8px;color:#aaa;font-size:14px}
+.results-head{display:flex;justify-content:space-between;align-items:center}
+.results-head h2{margin:0}.results-head span{color:#aaa}
+.frames{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;margin-top:15px}
+.frame{background:#111;border:1px solid #333;border-radius:8px;overflow:hidden}
+.frame img{display:block;width:100%;aspect-ratio:1/1;object-fit:contain;background:#080808}
+.frame small{display:block;padding:6px;color:#aaa;text-align:center}
+@media(max-width:700px){.grid{grid-template-columns:1fr}.app{margin-top:16px}.card{padding:14px}}

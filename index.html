@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video to Frames</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app">
+  <h1>Video → Frames</h1>
+  <p class="subtitle">Extract PNG frames from a video directly in your browser.</p>
+
+  <section class="card">
+    <label class="upload">
+      <input id="videoInput" type="file" accept="video/*">
+      <span id="fileLabel">Choose a video</span>
+    </label>
+
+    <div class="grid">
+      <label>FPS
+        <select id="fps">
+          <option value="6">6</option>
+          <option value="8">8</option>
+          <option value="10">10</option>
+          <option value="12" selected>12</option>
+          <option value="15">15</option>
+          <option value="24">24</option>
+          <option value="30">30</option>
+          <option value="60">60</option>
+        </select>
+      </label>
+
+      <label>Format
+        <select id="format">
+          <option value="image/png" selected>PNG</option>
+          <option value="image/jpeg">JPG</option>
+          <option value="image/webp">WebP</option>
+        </select>
+      </label>
+
+      <label>Quality <span id="qualityValue">0.92</span>
+        <input id="quality" type="range" min="0.5" max="1" step="0.01" value="0.92">
+      </label>
+    </div>
+
+    <div class="preview-wrap">
+      <video id="video" controls muted playsinline></video>
+      <canvas id="canvas" hidden></canvas>
+    </div>
+
+    <div class="actions">
+      <button id="extractBtn" disabled>Extract Frames</button>
+      <button id="downloadZipBtn" disabled>Download ZIP</button>
+      <button id="clearBtn" class="secondary">Clear</button>
+    </div>
+
+    <div class="status">
+      <div class="progress"><div id="progressBar"></div></div>
+      <div id="statusText">Choose a video to begin.</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="results-head">
+      <h2>Frames</h2>
+      <span id="frameCount">0</span>
+    </div>
+    <div id="frames" class="frames"></div>
+  </section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
